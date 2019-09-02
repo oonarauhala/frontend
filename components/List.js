@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 import React, {useContext, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
@@ -22,12 +23,12 @@ const useFetch = (url) => {
 
 const List = (props) => {
   const [media, loading] = useFetch('http://media.mw.metropolia.fi/wbma/media/');
-  console.log(loading);
-  console.log('media', media);
   return (
     <FlatList
       data={media}
-      renderItem={({item}) => <ListItem singleMedia={item} />}
+      renderItem={({item}) => <ListItem 
+        navigation={props.navigation}
+        singleMedia={item} />}
       keyExtractor={(item, index) => index.toString()}
     />
   );

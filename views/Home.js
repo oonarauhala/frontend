@@ -4,17 +4,17 @@
 import React from 'react';
 import {
   StyleSheet,
+  View,
 } from 'react-native';
-import {MediaProvider} from './contexts/MediaContext';
-import Home from './views/Home';
-import TabNavigator from './navigators/Navigator';
+import List from '../components/List';
 
 
-const App = () => {
+const Home = (props) => {
+  const {navigation} = props;
   return (
-    <MediaProvider>
-      <TabNavigator></TabNavigator>
-    </MediaProvider>
+    <View style={styles.container}>
+      <List navigation={navigation}></List>
+    </View>
   );
 };
 
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Home;
