@@ -1,0 +1,12 @@
+.expo
+.expo-shared
+assets.json
+/assets
+/node_modules
+.eslintrc.js
+.watchmanconfig
+app.json
+babel.config.js
+package-lock.json
+package.json
+
