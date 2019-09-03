@@ -5,11 +5,9 @@ import PropTypes from 'prop-types';
 import {StyleSheet, View, Text, Image} from 'react-native';
 
 const Single = (props) => {
-
   const fileName = props.navigation.getParam('file');
   const fileDescription = props.navigation.getParam('desc');
   const url = 'http://media.mw.metropolia.fi/wbma/uploads/' + fileName;
-
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{fileDescription}</Text>
