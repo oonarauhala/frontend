@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {StyleSheet, View, Text, Button, AsyncStorage} from 'react-native';
+import {useState, useEffect} from 'react';
 
 const Profile = (props) => {
   const signOutAsync = async () => {

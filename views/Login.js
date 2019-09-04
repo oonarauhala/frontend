@@ -10,7 +10,8 @@ import {
   Button,
   AsyncStorage,
 } from 'react-native';
-import FormTextInput from '../components/FormTextImput';
+import FormTextInput from '../components/FormTextInput';
+import useSignUpForm from '../hooks/LoginHooks';
 
 const Login = (props) => { // props is needed for navigation
   const signInAsync = async (url, data) => {
@@ -21,27 +22,30 @@ const Login = (props) => { // props is needed for navigation
       body: JSON.stringify(data),
     });
     const json = await response.json();
-    console.log(json);
     await AsyncStorage.setItem('userToken', json.token);
     props.navigation.navigate('App');
   };
+  const {inputs, handleUsernameChange, handlePasswordChange} = useSignUpForm();
   return (
     <View style={styles.container}>
       <Text>Login</Text>
       <View style={styles.form}>
         <FormTextInput
           autoCapitalize='none'
-          placeholder='username' />
+          placeholder='username' 
+          onChangeText={handleUsernameChange}
+          value={inputs.username}/>
         <FormTextInput
           autoCapitalize='none'
           placeholder='password'
-          secureTextEntry={true} />
+          secureTextEntry={true}
+          onChangeText={handlePasswordChange}
+          value={inputs.password} />
       </View>
       <Button title="Sign in!" onPress={
         () => {
           // eslint-disable-next-line quotes
-          signInAsync('http://media.mw.metropolia.fi/wbma/login', {"username": "john", "password": "examplepass"});
-          console.log('signInAsync success!');
+          signInAsync('http://media.mw.metropolia.fi/wbma/login', inputs);
         }
       } />
     </View>
