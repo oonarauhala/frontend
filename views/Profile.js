@@ -14,6 +14,8 @@ const Profile = (props) => {
   return (
     <View style={styles.container}>
       <Text>Profile</Text>
+      <Text>Username here!</Text>
+      <Text>Email here!</Text>
       <Button title="Logout!"onPress={signOutAsync} />
     </View>
   );

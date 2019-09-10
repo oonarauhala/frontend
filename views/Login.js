@@ -23,6 +23,8 @@ const Login = (props) => { // props is needed for navigation
     });
     const json = await response.json();
     await AsyncStorage.setItem('userToken', json.token);
+    // setting user data to asyncStorege (not sure if working)
+    await AsyncStorage.setItem('user', JSON.stringify(json.user));
     props.navigation.navigate('App');
   };
   const {inputs, handleUsernameChange, handlePasswordChange} = useSignUpForm();
