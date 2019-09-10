@@ -2,11 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React, {useContext, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import {
-  FlatList,
-} from 'react-native';
 import ListItem from './ListItem';
 import {MediaContext} from '../contexts/MediaContext';
+import {List as BaseList, Container} from 'native-base';
 
 const useFetch = (url) => {
   const [media, setMedia] = useContext(MediaContext);
@@ -24,13 +22,18 @@ const useFetch = (url) => {
 const List = (props) => {
   const [media, loading] = useFetch('http://media.mw.metropolia.fi/wbma/media/');
   return (
-    <FlatList
-      data={media}
-      renderItem={({item}) => <ListItem 
-        navigation={props.navigation}
-        singleMedia={item} />}
-      keyExtractor={(item, index) => index.toString()}
-    />
+    <Container>
+      <BaseList
+        dataArray={media}
+        renderRow={
+          (item) => <ListItem
+            navigation={props.navigation}
+            singleMedia={item}
+          />
+        }
+        keyExtractor={(item, index) => index.toString()}
+      />
+    </Container>
   );
 };
 

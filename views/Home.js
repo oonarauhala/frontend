@@ -3,28 +3,19 @@
 /* eslint-disable max-len */
 import React from 'react';
 import {
-  StyleSheet,
   View,
 } from 'react-native';
 import List from '../components/List';
+import {Container} from 'native-base';
 
 
 const Home = (props) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <Container>
       <List navigation={navigation}></List>
-    </View>
+    </Container>
   );
 };
-
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    paddingHorizontal: 10,
-    paddingTop: 40,
-  },
-});
 
 export default Home;

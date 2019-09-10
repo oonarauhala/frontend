@@ -4,7 +4,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import {
-  StyleSheet,
   View,
   Text,
   Button,
@@ -29,9 +28,9 @@ const Login = (props) => { // props is needed for navigation
   };
   const {inputs, handleUsernameChange, handlePasswordChange} = useSignUpForm();
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Login</Text>
-      <View style={styles.form}>
+      <View>
         <FormTextInput
           autoCapitalize='none'
           placeholder='username' 
@@ -53,16 +52,6 @@ const Login = (props) => { // props is needed for navigation
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 40,
-  },
-});
 
 // proptypes here
 
