@@ -11,7 +11,6 @@ const getThumbnail = (url) => {
     const response = await fetch('http://media.mw.metropolia.fi/wbma/media/' + url);
     const json = await response.json();
     setThumbnails(json.thumbnails);
-    console.log(json.thumbnails);
   }
   useEffect(() => {
     fetchUrl();
