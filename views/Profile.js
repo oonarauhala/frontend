@@ -2,7 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, Text, Button, AsyncStorage} from 'react-native';
+import {AsyncStorage} from 'react-native';
+import {Container, Header, Content, Text, Button} from 'native-base';
 import {useState, useEffect} from 'react';
 
 const Profile = (props) => {
@@ -12,12 +13,18 @@ const Profile = (props) => {
     props.navigation.navigate('Auth');
   };
   return (
-    <View>
-      <Text>Profile</Text>
-      <Text>Username here!</Text>
-      <Text>Email here!</Text>
-      <Button title="Logout!"onPress={signOutAsync} />
-    </View>
+    <Container>
+      <Header>
+        <Text>Profile</Text>
+      </Header>
+      <Content>
+        <Text>Username here!</Text>
+        <Text>Email here!</Text>
+      </Content>
+      <Button onPress={signOutAsync} >
+        <Text>Logout</Text>
+      </Button>
+    </Container>
   );
 };
 
