@@ -2,9 +2,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import React from 'react';
-import {
-  View,
-} from 'react-native';
 import List from '../components/List';
 import {Container} from 'native-base';
 

@@ -1,5 +1,7 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
 import {useState} from 'react';
+
 
 const useSignUpForm = () => {
   const [inputs, setInputs] = useState({});

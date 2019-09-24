@@ -3,14 +3,11 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {
-  View,
-  Text,
-  Button,
-  AsyncStorage,
-} from 'react-native';
+import {Container, 
+  Text, Header, Content, Card, CardItem, Button} from 'native-base';
 import FormTextInput from '../components/FormTextInput';
 import useSignUpForm from '../hooks/LoginHooks';
+import {AsyncStorage} from 'react-native';
 
 const Login = (props) => { // props is needed for navigation
   const signInAsync = async (url, data) => {
@@ -28,12 +25,13 @@ const Login = (props) => { // props is needed for navigation
   };
   const {inputs, handleUsernameChange, handlePasswordChange} = useSignUpForm();
   return (
-    <View>
-      <Text>Login</Text>
-      <View>
+    <Container>
+      <Header>
+        <Text>Login</Text>
+      </Header>
+      
+      <Content>
         <FormTextInput
-          autoCapitalize='none'
-          placeholder='username' 
           onChangeText={handleUsernameChange}
           value={inputs.username}/>
         <FormTextInput
@@ -42,14 +40,18 @@ const Login = (props) => { // props is needed for navigation
           secureTextEntry={true}
           onChangeText={handlePasswordChange}
           value={inputs.password} />
-      </View>
-      <Button title="Sign in!" onPress={
+      </Content>
+      <Button onPress={
         () => {
           // eslint-disable-next-line quotes
           signInAsync('http://media.mw.metropolia.fi/wbma/login', inputs);
         }
-      } />
-    </View>
+      }>
+        <Text>
+          Log in!
+        </Text>
+      </Button>
+    </Container>
   );
 };
 

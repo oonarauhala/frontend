@@ -1,9 +1,8 @@
 /* eslint-disable max-len */
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-const initState = [{}, () => {}];
 
-const MediaContext = React.createContext(initState);
+const MediaContext = React.createContext({});
 const MediaProvider = (props) => {
   const [media, setMedia] = useState({});
   return (

@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/display-name */
 import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';

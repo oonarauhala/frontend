@@ -15,7 +15,7 @@ const Single = (props) => {
         <Card>
           <CardItem>
             <Text>{fileDescription}</Text>
-            <Image source={{uri: url}} style={{height: 200, width: 200}}></Image>
+            <Image source={{uri: url}}style={{height: 200, width: 200}}></Image>
           </CardItem>
         </Card>
       </Content>
