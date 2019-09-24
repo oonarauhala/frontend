@@ -32,11 +32,13 @@ const Login = (props) => { // props is needed for navigation
       
       <Content>
         <FormTextInput
+          autoCapitalize='none'
+          placeholder='Username'
           onChangeText={handleUsernameChange}
           value={inputs.username}/>
         <FormTextInput
           autoCapitalize='none'
-          placeholder='password'
+          placeholder='Password'
           secureTextEntry={true}
           onChangeText={handlePasswordChange}
           value={inputs.password} />
